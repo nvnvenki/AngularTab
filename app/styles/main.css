@@ -1,0 +1,85 @@
+body {
+  background: #efefef;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-weight: 300;
+  margin: 5px; 
+}
+
+.apps-outer {
+  height: 300px;
+  width: 300px;
+}
+.apps-outer .apps-inner {
+  display: block;
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+  padding: 0; 
+  background: #00BCD4;
+}
+.apps-outer h2 {
+  color: #fff;
+  font-size: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  opacity: 0;
+  text-align: center;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  -webkit-transform: translate3d(0, -50px, 0);
+          transform: translate3d(0, -50px, 0);
+  transition: all 600ms; 
+}
+.apps-outer:hover h2 {
+  transition: all 600ms;
+  opacity: 1;
+  -webkit-transform: translate3d(0, -95px, 0);
+          transform: translate3d(0, -95px, 0);
+}
+
+.apps-inner:hover h1 {
+  visibility: hidden;
+}
+
+.apps-inner h1 {
+  font-size: 180px;
+  text-align: center;
+   color: #fff;
+}
+
+.apps-inner.add-link:hover h1 {
+  visibility: visible;
+  text-decoration: none;
+}
+
+.apps-inner.add-link:hover {
+  text-decoration: none;
+}
+
+.apps-row {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+}
+
+#datetime {
+  text-align: center;
+}
+#datetime h1 {
+  font-size: 6.1em;
+}
+
+#datetime h2 {
+  font-size: 1.0em;
+}
+
+.add-button {
+  cursor: pointer;
+}
+
+.add-button h1 {
+  text-align: center;
+  margin-top: 40%;
+}

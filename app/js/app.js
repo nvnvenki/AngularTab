@@ -1,0 +1,1 @@
+var newTab = angular.module('newTab', ['ui.bootstrap']);

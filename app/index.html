@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="newTab">
+  <head>
+    <meta charset="utf-8">
+    <title>New Tab</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/styles/main.css">
+  </head>
+  <body class="ng-cloak">
+    <div class="container-fluid" ng-controller="newTabCtrl">
+      <div class="row time-row">
+        <div id="datetime">
+          <h1>{{ date.raw | date:'hh:mm:ss a' }}</h1>
+          <h2>{{ date.raw | date:'EEEE, MMMM yyyy' }}</h2>
+        </div>
+      </div>
+      <div class="row apps-row">
+        <div class="apps-outer col-xs-6 col-sm-4 col-md-4 col-lg-3" ng-repeat="link in newTablinks">
+            <a ng-href="http://{{ link.url }}" class="apps-inner" style="background:url(https://logo.clearbit.com/{{link.url}}?size=250);background-repeat:no-repeat;" target="_blank">
+              <h2>{{ link.name }}</h2>
+            </a>
+        </div>
+        <div class="apps-outer col-xs-6 col-sm-4 col-md-4 col-lg-3 add-button" ng-click="addShortCut()">
+            <div>
+              <h1>
+                <i class="glyphicon glyphicon-plus"></i>
+              </h1>
+              <h2>Add Shortcut</h2>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+  </body>
+</html>
