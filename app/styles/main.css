@@ -43,6 +43,13 @@ body {
           transform: translate3d(0, -95px, 0);
 }
 
+.apps-outer.add-button:hover h2 {
+    transition: all 600ms;
+    opacity: 1;
+    -webkit-transform: translate3d(0, -60px, 0);
+    transform: translate3d(0, -60px, 0);
+}
+
 .apps-inner:hover h1 {
   visibility: hidden;
 }
@@ -92,4 +99,8 @@ body {
 
 .modal-content .modal-header {
   padding-bottom: 24px;
+}
+
+.add-button .tooltip-inner {
+  padding: 10px;
 }
