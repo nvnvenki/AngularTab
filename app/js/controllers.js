@@ -100,10 +100,12 @@ newTab.controller('newTabCtrl', function($scope, $timeout, $uibModal, $window) {
 
 newTab.controller('shortCutModalCtrl', function($scope,  $modalInstance, newTabLink) {
 	$scope.buttonText = "Add";
+	$scope.modalHeaderText = "Add a new shortcut";
 	if(newTabLink != undefined) {
 		$scope.name = newTabLink.name;
 		$scope.url = newTabLink.url;
 		$scope.buttonText = "Ok"
+		$scope.modalHeaderText = "Edit existing shortcut";
 	} else {	
 		$scope.name = "";
 		$scope.url = "";
