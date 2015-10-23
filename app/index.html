@@ -24,8 +24,8 @@
       <div class="row apps-row">
         <div class="apps-outer col-xs-6 col-sm-4 col-md-4 col-lg-3" ng-repeat="link in newTablinks">
             <span ng-click="openLink(link)" class="apps-inner btn btn-default" style="background:url(https://logo.clearbit.com/{{link.url}}?size=250);background-repeat:no-repeat;" target="_blank">
-              <button class="delete-button btn btn-default btn-fab btn-sm btn-fab-mini btn-material-lightyellow shadow-z-2" ng-click="removeShortcut(link, $event)"><i class="mdi-content-clear" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete Shortcut"></i></button>
-              <button class="edit-button btn btn-default btn-fab btn-sm btn-fab-mini btn-material-lightyellow shadow-z-2" ng-click="editShortcut(link, $event)"><i class="mdi-image-edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit Shortcut"></i></button>
+              <button class="delete-button btn btn-warning btn-fab btn-sm btn-fab-mini btn-material-lightyellow shadow-z-2" ng-click="removeShortcut(link, $event)"><i class="mdi-content-clear" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete Shortcut"></i></button>
+              <button class="edit-button btn btn-primary btn-fab btn-sm btn-fab-mini btn-material-lightyellow shadow-z-2" ng-click="editShortcut(link, $event)"><i class="mdi-image-edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit Shortcut"></i></button>
               <h4>{{ link.name }}</h4>
             </span>
         </div>
