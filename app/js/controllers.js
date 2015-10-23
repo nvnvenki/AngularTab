@@ -61,7 +61,7 @@ newTab.controller('newTabCtrl', function($scope, $timeout, $uibModal, $window) {
 	    });
 	    modalInstance.result.then(function (deleteShortcut) {
 	    	if(deleteShortcut) {
-	    		 $scope.newTablinks = JSON.parse(localStorage.getItem('newTablinks'));
+	    		$scope.newTablinks = JSON.parse(localStorage.getItem('newTablinks'));
 				var indexToDelete = $scope.newTablinks.indexOf(newTabLink);
 		  		$scope.newTablinks.splice(indexToDelete, 1);     
 				localStorage.setItem('newTablinks', JSON.stringify($scope.newTablinks));
@@ -91,9 +91,9 @@ newTab.controller('newTabCtrl', function($scope, $timeout, $uibModal, $window) {
 	};
 
 	$scope.resetNewTabToDefault = function() {
-		localStorage.removeItem('newTablinks');
 		localStorage.removeItem('newTablinks-stored');
 		$scope.newTablinks = JSON.parse(localStorage.getItem('defaultNewTablinks'));
+		localStorage.setItem('newTablinks', localStorage.getItem('defaultNewTablinks'));
 	};
 
 });
