@@ -19,25 +19,27 @@
           <h1>{{ date.raw | date:'hh:mm:ss a' }}</h1>
           <h2>{{ date.raw | date:'EEEE, MMMM yyyy' }}</h2>
         </div>
+        <i class="reset-button btn btn-danger btn-fab btn-sm shadow-z-3 mdi-av-loop" data-toggle="tooltip" data-placement="left" title="" data-original-title="Reset to default values" ng-click="resetNewTabToDefault()"></i>
       </div>
       <div class="row apps-row">
         <div class="apps-outer col-xs-6 col-sm-4 col-md-4 col-lg-3" ng-repeat="link in newTablinks">
-            <a ng-href="http://{{ link.url }}" class="apps-inner btn btn-default" style="background:url(https://logo.clearbit.com/{{link.url}}?size=250);background-repeat:no-repeat;" target="_blank">
-              <!-- <h4 class="remove-button"><i class="glyphicon glyphicon-remove"></i></h4> -->
-              <h2>{{ link.name }}</h2>
-            </a>
+            <span ng-click="openLink(link)" class="apps-inner btn btn-default" style="background:url(https://logo.clearbit.com/{{link.url}}?size=250);background-repeat:no-repeat;" target="_blank">
+              <button class="delete-button btn btn-warning btn-fab btn-sm btn-fab-mini btn-material-lightyellow shadow-z-2" ng-click="removeShortcut(link, $event)"><i class="mdi-content-clear" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete Shortcut"></i></button>
+              <button class="edit-button btn btn-primary btn-fab btn-sm btn-fab-mini btn-material-lightyellow shadow-z-2" ng-click="editShortcut(link, $event)"><i class="mdi-image-edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit Shortcut"></i></button>
+              <h4>{{ link.name }}</h4>
+            </span>
         </div>
         <div class="apps-outer col-xs-6 col-sm-4 col-md-4 col-lg-3 add-button" ng-click="addShortCut()">
             <div>
               <h1>
-                <i class="glyphicon glyphicon-plus"></i>
+                <i class="btn btn-fab btn-raised btn-primary mdi-content-add" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Add Shortcut"></i>
               </h1>
-              <h2>Add Shortcut</h2>
             </div>
         </div>
       </div>
     </div>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
     <script src="bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
