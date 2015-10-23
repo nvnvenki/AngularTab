@@ -19,6 +19,7 @@
           <h1>{{ date.raw | date:'hh:mm:ss a' }}</h1>
           <h2>{{ date.raw | date:'EEEE, MMMM yyyy' }}</h2>
         </div>
+        <i class="reset-button btn btn-danger btn-fab btn-sm shadow-z-3 mdi-av-loop" data-toggle="tooltip" data-placement="left" title="" data-original-title="Reset to default values" ng-click="resetNewTabToDefault()"></i>
       </div>
       <div class="row apps-row">
         <div class="apps-outer col-xs-6 col-sm-4 col-md-4 col-lg-3" ng-repeat="link in newTablinks">

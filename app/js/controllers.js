@@ -29,6 +29,7 @@ newTab.controller('newTabCtrl', function($scope, $timeout, $uibModal, $window) {
 	} else {
 		localStorage.setItem('newTablinks-stored', true);
 		localStorage.setItem('newTablinks', JSON.stringify($scope.newTablinks));
+		localStorage.setItem('defaultNewTablinks', JSON.stringify($scope.newTablinks));
 	}
 
 	$scope.addShortCut = function() {
@@ -87,6 +88,12 @@ newTab.controller('newTabCtrl', function($scope, $timeout, $uibModal, $window) {
 	    	$scope.newTablinks[indexToEdit] = modifiedShortcut;
 	    	localStorage.setItem('newTablinks', JSON.stringify($scope.newTablinks));
 	    });
+	};
+
+	$scope.resetNewTabToDefault = function() {
+		localStorage.removeItem('newTablinks');
+		localStorage.removeItem('newTablinks-stored');
+		$scope.newTablinks = JSON.parse(localStorage.getItem('defaultNewTablinks'));
 	};
 
 });
