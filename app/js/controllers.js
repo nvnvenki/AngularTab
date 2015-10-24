@@ -14,13 +14,16 @@ newTab.controller('newTabCtrl', function($scope, $timeout, $uibModal, $window) {
 	// Default values
 	$scope.newTablinks = [{
 		name: 'Google',
-		url: 'google.com'
+		url: 'google.com',
+		defaultBackground: '#fff'
 	},{
 		name: 'Facebook',
-		url: 'facebook.com'
+		url: 'facebook.com',
+		defaultBackground: '#3E5B9A'
 	},{
 		name: 'Twitter',
-		url: 'twitter.com'
+		url: 'twitter.com',
+		defaultBackground: '#3B94D9'
 	}];
 
 	// If the new tab link details are stored
@@ -44,6 +47,7 @@ newTab.controller('newTabCtrl', function($scope, $timeout, $uibModal, $window) {
 	    });
 	    modalInstance.result.then(function (newShortcut) {
 	    	$scope.newTablinks = JSON.parse(localStorage.getItem('newTablinks'));
+	    	newShortcut.defaultBackground = materialColors[Math.floor(Math.random() * materialColors.length)];
 	    	$scope.newTablinks.push(newShortcut);
 	    	localStorage.setItem('newTablinks', JSON.stringify($scope.newTablinks));
 	    });
@@ -95,15 +99,6 @@ newTab.controller('newTabCtrl', function($scope, $timeout, $uibModal, $window) {
 		$scope.newTablinks = JSON.parse(localStorage.getItem('defaultNewTablinks'));
 		localStorage.setItem('newTablinks', localStorage.getItem('defaultNewTablinks'));
 	};
-
-	// TODO: Do it angular way!
-	setTimeout(function(){
-		$('.default-background').each(function(index, div){
-			$(div).css({
-	  			'background-color': materialColors[Math.floor(Math.random() * materialColors.length)]
-			});
-		});
-	});
 });
 
 newTab.controller('shortCutModalCtrl', function($scope,  $modalInstance, newTabLink) {

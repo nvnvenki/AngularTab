@@ -26,7 +26,7 @@
             <span ng-click="openLink(link)" class="apps-inner btn btn-default" style="background:url(https://logo.clearbit.com/{{link.url}}?size=250);" target="_blank">
               <button class="delete-button btn btn-warning btn-fab btn-sm btn-fab-mini btn-material-lightyellow shadow-z-2" ng-click="removeShortcut(link, $event)"><i class="mdi-content-clear" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete Shortcut"></i></button>
               <button class="edit-button btn btn-primary btn-fab btn-sm btn-fab-mini btn-material-lightyellow shadow-z-2" ng-click="editShortcut(link, $event)"><i class="mdi-image-edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit Shortcut"></i></button>
-              <div class="default-background">
+              <div class="default-background" ng-style="{'background-color': link.defaultBackground}">
                 {{link.name[0]}}
               </div>
               <h4>{{ link.name }}</h4>
