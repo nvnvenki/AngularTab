@@ -96,6 +96,14 @@ newTab.controller('newTabCtrl', function($scope, $timeout, $uibModal, $window) {
 		localStorage.setItem('newTablinks', localStorage.getItem('defaultNewTablinks'));
 	};
 
+	// TODO: Do it angular way!
+	setTimeout(function(){
+		$('.default-background').each(function(index, div){
+			$(div).css({
+	  			'background-color': materialColors[Math.floor(Math.random() * materialColors.length)]
+			});
+		});
+	});
 });
 
 newTab.controller('shortCutModalCtrl', function($scope,  $modalInstance, newTabLink) {

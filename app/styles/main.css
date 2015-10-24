@@ -13,13 +13,15 @@ body {
   height: 265px;
   width: 265px;
 }
+
 .apps-outer .apps-inner {
   display: block;
   text-decoration: none;
   height: 250px;
   width: 100%;
-  padding: 0; 
-  background: #00BCD4;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-color: #fff !important;
 }
 .apps-outer h4 {
   color: #fff;
@@ -136,4 +138,17 @@ body {
   position: fixed;
   right: 20px;
   top: 20px;
+}
+
+/**
+* Fall backk whenn background is not loaded or the logo cleartbit didnt fetch
+**/
+.default-background {
+  width: 100%;
+  height: 100%;
+  font-size: 100px;
+  padding: 20%;
+  color: #fff;
+  z-index: -1;
+  position: absolute;
 }
